@@ -113,6 +113,17 @@ for col in box_plot_cols:
     plt.figure(figsize = (12, 2))
     sns.boxplot(glass_df[col])
     st.pyplot()
+    
+st.sidebar.subheader("Select your values:")
+ri = st.sidebar.slider("Input Ri", float(glass_df['RI'].min()), float(glass_df['RI'].max()))
+na = st.sidebar.slider("Input Na", float(glass_df['Na'].min()), float(glass_df['Na'].max()))
+mg = st.sidebar.slider("Input Mg", float(glass_df['Mg'].min()), float(glass_df['Mg'].max()))
+al = st.sidebar.slider("Input Al", float(glass_df['Al'].min()), float(glass_df['Al'].max()))
+si = st.sidebar.slider("Input Si", float(glass_df['Si'].min()), float(glass_df['Si'].max()))
+k = st.sidebar.slider("Input K", float(glass_df['K'].min()), float(glass_df['K'].max()))
+ca = st.sidebar.slider("Input Ca", float(glass_df['Ca'].min()), float(glass_df['Ca'].max()))
+ba = st.sidebar.slider("Input Ba", float(glass_df['Ba'].min()), float(glass_df['Ba'].max()))
+fe = st.sidebar.slider("Input Fe", float(glass_df['Fe'].min()), float(glass_df['Fe'].max()))
 
 st.sidebar.subheader("Choose Classifier: ")
 classifier = st.sidebar.selectbox("Classifier ", ("Support Vector Mechine", "Random Forest Classifier", "Logistic Regression"))
